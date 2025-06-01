@@ -33,8 +33,7 @@ class Game {
   }
 
   score() {
-    // TODO
-    return 2;
+    return Math.max(...this.board.filter((v) => v != "empty"));
   }
 
   // If playing the move does not change the board, it is an invalid move.
@@ -128,7 +127,6 @@ class Game {
 
   constructor() {
     this.board = new Array(16).fill("empty");
-    this.score = 2;
 
     this.spawn2();
   }

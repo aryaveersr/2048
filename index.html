@@ -16,11 +16,11 @@
   <body>
     <!-- Game over dialog -->
     <dialog id="game-over-dialog">
-      <h1>Game over.</h1>
+      <h1>You <span id="game-result"></span></h1>
       <p>You reached <span id="game-over-score"></span>.</p>
 
       <form method="dialog">
-        <button class="text" id="view-board-btn">View board</button>
+        <button class="text">View board</button>
         <button class="text" autofocus id="play-again-btn">Play again</button>
       </form>
     </dialog>
@@ -31,8 +31,8 @@
       <section>
         <!-- Status bar -->
         <div class="status-bar">
-          <button class="icon" id="restart-btn" aria-label="Restart game">
-            ⭮
+          <button class="text" id="restart-btn" aria-label="Restart game">
+            Restart
           </button>
 
           <p>Current score is <span id="status-score">2</span>.</p>
