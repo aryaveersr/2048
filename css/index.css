@@ -61,6 +61,21 @@ section {
   align-items: center;
 }
 
+.controls {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  gap: 0.5rem;
+}
+
+.controls > div {
+  display: flex;
+  flex-direction: row;
+
+  gap: 0.5rem;
+}
+
 /* Board */
 
 .board {
@@ -97,71 +112,122 @@ section {
 }
 
 .square[data-content="2"] {
-  --color: color-mix(in srgb, var(--orange-200), gold 50%);
+  --color: color-mix(in srgb, var(--orange-200), white 10%);
 }
 
 .square[data-content="4"] {
-  --color: color-mix(in srgb, var(--orange-200), red 30%);
+  --color: color-mix(in srgb, var(--orange-200), red 10%);
 }
 
 .square[data-content="8"] {
-  --color: color-mix(in srgb, var(--orange-200), red 30%);
+  --color: color-mix(in srgb, var(--orange-200), yellow 10%);
 }
 
 .square[data-content="16"] {
-  --color: color-mix(in srgb, var(--orange-200), red 30%);
+  --color: color-mix(in srgb, var(--orange-200), purple 10%);
 }
 
 .square[data-content="32"] {
-  --color: color-mix(in srgb, var(--orange-200), red 30%);
+  --color: color-mix(in srgb, var(--orange-200), green 10%);
 }
 
 .square[data-content="64"] {
-  --color: color-mix(in srgb, var(--orange-200), red 30%);
+  --color: color-mix(in srgb, var(--orange-200), blue 10%);
 }
 
 .square[data-content="128"] {
-  --color: color-mix(in srgb, var(--orange-200), red 30%);
+  --color: color-mix(in srgb, var(--orange-200), cyan 10%);
 }
 
 .square[data-content="256"] {
-  --color: color-mix(in srgb, var(--orange-200), red 30%);
+  --color: color-mix(in srgb, var(--orange-200), pink 10%);
 }
 
 .square[data-content="512"] {
-  --color: color-mix(in srgb, var(--orange-200), red 30%);
+  --color: color-mix(in srgb, var(--orange-200), lime 10%);
 }
 
 .square[data-content="1024"] {
-  --color: color-mix(in srgb, var(--orange-200), red 30%);
+  --color: color-mix(in srgb, var(--orange-200), magenta 10%);
 }
 
 .square[data-content="2048"] {
-  --color: color-mix(in srgb, var(--orange-200), red 30%);
+  --color: color-mix(in srgb, var(--orange-200), orangered 25%);
 }
 
 /* Dialog */
 
+dialog:open {
+  justify-self: center;
+  align-self: center;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  background-color: var(--background);
+  border: none;
+  border-radius: 8px;
+
+  padding: 2rem;
+  gap: 1rem;
+}
+
+dialog > form {
+  width: 100%;
+
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+dialog::backdrop {
+  background-color: black;
+  opacity: 0.4;
+}
+
 /* Buttons */
 
 button {
-  --size: 2rem;
+  cursor: pointer;
+  border-radius: 99rem;
+  border: none;
+
+  background-color: var(--orange-200);
+
+  transition: background-color 0.2s ease-in-out;
+}
+
+button:hover {
+  background-color: var(--orange-300);
+}
+
+button:disabled {
+  cursor: not-allowed;
+  background-color: var(--orange-100);
+}
+
+button.icon {
+  --size: 2.5rem;
 
   width: var(--size);
   height: var(--size);
 
+  font-size: 20px;
+
   display: flex;
   justify-content: center;
   align-items: center;
-
-  cursor: pointer;
-  border-radius: 99rem;
-
-  font-size: 20px;
 }
 
-.large {
+button.icon.large {
   --size: 3.25rem;
 
   font-size: 24px;
+}
+
+button.text {
+  padding: 0.5rem 0.75rem;
 }

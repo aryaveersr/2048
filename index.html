@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="css/index.css" />
 
     <!-- Scripts -->
-    <script type="module" src="ts/app.ts"></script>
+    <script type="module" src="js/app.mjs"></script>
 
     <!-- Meta-data -->
     <title>2048</title>
@@ -20,8 +20,8 @@
       <p>You reached <span id="game-over-score"></span>.</p>
 
       <form method="dialog">
-        <button id="view-board-btn">View board</button>
-        <button autofocus id="play-again-btn">Play again</button>
+        <button class="text" id="view-board-btn">View board</button>
+        <button class="text" autofocus id="play-again-btn">Play again</button>
       </form>
     </dialog>
 
@@ -31,24 +31,26 @@
       <section>
         <!-- Status bar -->
         <div class="status-bar">
-          <button id="restart-btn" aria-label="Restart game">⭮</button>
+          <button class="icon" id="restart-btn" aria-label="Restart game">
+            ⭮
+          </button>
 
           <p>Current score is <span id="status-score">2</span>.</p>
         </div>
 
         <!-- Board -->
         <div class="board" id="board">
-          <div class="square" data-content="2">2</div>
-          <div class="square" data-content="4">4</div>
-          <div class="square" data-content="8">8</div>
-          <div class="square" data-content="16">16</div>
-          <div class="square" data-content="32">32</div>
-          <div class="square" data-content="64">64</div>
-          <div class="square" data-content="128">128</div>
-          <div class="square" data-content="256">256</div>
-          <div class="square" data-content="512">512</div>
-          <div class="square" data-content="1024">1024</div>
-          <div class="square" data-content="2048">2048</div>
+          <div class="square" data-content="empty"></div>
+          <div class="square" data-content="empty"></div>
+          <div class="square" data-content="empty"></div>
+          <div class="square" data-content="empty"></div>
+          <div class="square" data-content="empty"></div>
+          <div class="square" data-content="empty"></div>
+          <div class="square" data-content="empty"></div>
+          <div class="square" data-content="empty"></div>
+          <div class="square" data-content="empty"></div>
+          <div class="square" data-content="empty"></div>
+          <div class="square" data-content="empty"></div>
           <div class="square" data-content="empty"></div>
           <div class="square" data-content="empty"></div>
           <div class="square" data-content="empty"></div>
@@ -67,10 +69,18 @@
 
         <!-- Game controls -->
         <div class="controls">
-          <button class="large" id="up-btn" aria-label="Up">🠝</button>
-          <button class="large" id="down-btn" aria-label="Down">🠟</button>
-          <button class="large" id="left-btn" aria-label="Left">🠜</button>
-          <button class="large" id="right-btn" aria-label="Right">🠞</button>
+          <button class="large icon" id="up-btn" aria-label="Up">🠝</button>
+          <div>
+            <button class="large icon" id="left-btn" aria-label="Left">
+              🠜
+            </button>
+            <button class="large icon" id="down-btn" aria-label="Down">
+              🠟
+            </button>
+            <button class="large icon" id="right-btn" aria-label="Right">
+              🠞
+            </button>
+          </div>
         </div>
       </section>
     </main>
