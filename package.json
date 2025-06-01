@@ -4,6 +4,9 @@
   "peerDependencies": {
     "typescript": "^5"
   },
+  "devDependencies": {
+    "@types/web": "^0.0.231"
+  },
   "scripts": {
     "check": "tsc",
     "dev": "bun src/index.html",
