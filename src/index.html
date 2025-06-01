@@ -4,13 +4,78 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <link rel="stylesheet" href="styles/index.css" />
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="css/index.css" />
+    <link rel="stylesheet" href="css/sections/board.css" />
+    <link rel="stylesheet" href="css/sections/dialog.css" />
+    <link rel="stylesheet" href="css/ui/button.css" />
 
+    <!-- Scripts -->
+    <script type="module" src="ts/app.ts"></script>
+
+    <!-- Meta-data -->
     <title>2048</title>
   </head>
   <body>
-    <h1>Hello world!</h1>
+    <!-- Game over dialog -->
+    <dialog id="game-over-dialog">
+      <h1>Game over.</h1>
+      <p>You reached <span id="game-over-score"></span>.</p>
 
-    <script src="scripts/app.ts"></script>
+      <form method="dialog">
+        <button id="view-board-btn">View board</button>
+        <button autofocus id="play-again-btn">Play again</button>
+      </form>
+    </dialog>
+
+    <!-- Split view -->
+    <main>
+      <!-- Left pane -->
+      <section>
+        <!-- Status bar -->
+        <div class="status-bar">
+          <button id="restart-btn" aria-label="Restart game">⭮</button>
+
+          <p>Current score is <span id="status-score">2</span>.</p>
+        </div>
+
+        <!-- Board -->
+        <div class="board" id="board">
+          <div class="square" data-content="2">2</div>
+          <div class="square" data-content="4">4</div>
+          <div class="square" data-content="8">8</div>
+          <div class="square" data-content="16">16</div>
+          <div class="square" data-content="32">32</div>
+          <div class="square" data-content="64">64</div>
+          <div class="square" data-content="128">128</div>
+          <div class="square" data-content="256">256</div>
+          <div class="square" data-content="512">512</div>
+          <div class="square" data-content="1024">1024</div>
+          <div class="square" data-content="2048">2048</div>
+          <div class="square" data-content="empty"></div>
+          <div class="square" data-content="empty"></div>
+          <div class="square" data-content="empty"></div>
+          <div class="square" data-content="empty"></div>
+          <div class="square" data-content="empty"></div>
+        </div>
+      </section>
+
+      <!-- Right pane -->
+      <section>
+        <!-- Information -->
+        <div>
+          <h1>2048</h1>
+          <!-- TODO: Add short description, rules, links, etc. -->
+        </div>
+
+        <!-- Game controls -->
+        <div class="controls">
+          <button class="large" id="up-btn" aria-label="Up">🠝</button>
+          <button class="large" id="down-btn" aria-label="Down">🠟</button>
+          <button class="large" id="left-btn" aria-label="Left">🠜</button>
+          <button class="large" id="right-btn" aria-label="Right">🠞</button>
+        </div>
+      </section>
+    </main>
   </body>
 </html>
